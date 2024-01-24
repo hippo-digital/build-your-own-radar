@@ -36,20 +36,25 @@
       a {
         border: none;
         color: $white;
-
-        &:hover {
-          color: $white;
-        }
       }
     }
 
     &__wave-btn {
       background-color: $wave;
+      border-radius: 28px;
+      
+      &:hover {
+        color: $white;
+        text-decoration: underline;
+      }
     }
+
+  
 
     &__flamingo-btn {
       background-color: $flamingo-s40;
       color: $white;
+      border-radius: 28px;
 
       display: inline-flex;
       align-items: center;
@@ -63,6 +68,7 @@
 
       &:hover {
         color: $white;
+        text-decoration: underline;
       }
     }
   }

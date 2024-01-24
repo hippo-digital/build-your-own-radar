@@ -49,6 +49,7 @@
       font-family: $baseFontFamily;
       background-color: $mist;
       border: 1px solid #d5d9db;
+      border-radius: 10px;
       letter-spacing: 0.06px;
       height: 48px;
       margin-bottom: 20px;
@@ -71,9 +72,13 @@
       padding-right: 30px;
       margin-bottom: 18px;
       border: none;
+      border-radius: 28px;
       cursor: pointer;
       &:focus {
         outline: auto;
+      }
+      &:hover{
+        text-decoration: underline;
       }
     }
     input:disabled {

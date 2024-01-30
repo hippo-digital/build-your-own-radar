@@ -1,4 +1,4 @@
-const quadrantSize = 512
+const quadrantSize = 516
 const quadrantGap = 32
 
 const getQuadrants = () => {

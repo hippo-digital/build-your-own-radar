@@ -13,8 +13,7 @@
     "test:e2e-headless": "cypress run --browser chrome --record false --env host=$TEST_URL",
     "lint-prettier:check": "eslint . && prettier --check .",
     "lint-prettier:fix": "eslint . --fix && prettier --write .",
-    "quality": "npm run lint-prettier:check && npm run test:coverage",
-    "build": "next build"
+    "quality": "npm run lint-prettier:check && npm run test:coverage"
   },
   "author": "Thoughtworks",
   "repository": {

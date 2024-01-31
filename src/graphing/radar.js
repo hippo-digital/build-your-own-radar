@@ -131,7 +131,7 @@ const Radar = function (size, radar) {
 
   function plotRingNames(quadrantGroup, rings, quadrant) {
     rings.forEach(function (ring, i) {
-      const ringNameWithEllipsis = ring.name().length > 10 ? ring.name().slice(0, 10) + '...' : ring.name()
+      const ringNameWithEllipsis = ring.name().length > 8 ? ring.name().slice(0, 8) + '...' : ring.name()
       if (quadrant.order === 'third' || quadrant.order === 'fourth') {
         quadrantGroup
           .append('text')
@@ -140,6 +140,7 @@ const Radar = function (size, radar) {
           .attr('x', CENTER + (ringCalculator.getRingRadius(i) + ringCalculator.getRingRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
           .text(ringNameWithEllipsis)
+          .append('title').text(ring.name());
       } else {
         quadrantGroup
           .append('text')
@@ -148,6 +149,7 @@ const Radar = function (size, radar) {
           .attr('x', CENTER - (ringCalculator.getRingRadius(i) + ringCalculator.getRingRadius(i + 1)) / 2)
           .attr('text-anchor', 'middle')
           .text(ringNameWithEllipsis)
+          .append('title').text(ring.name());
       }
     })
   }

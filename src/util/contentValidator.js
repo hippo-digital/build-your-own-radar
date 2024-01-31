@@ -21,14 +21,46 @@ const ContentValidator = function (columnNames) {
   }
 
   self.verifyHeaders = function () {
-    _.each(['name', 'ring', 'quadrant', 'description'], function (field) {
-      if (columnNames.indexOf(field) === -1) {
-        throw new MalformedDataError(ExceptionMessages.MISSING_HEADERS)
-      }
-    })
+    let nameValid = false
+    let ringValid = false
+    let quadrantValid = false
+    let descriptionValid = false
+    let isNewValid = false
+    let statusValid = false
 
-    // At least one of isNew or status must be present
-    if (columnNames.indexOf('isNew') === -1 && columnNames.indexOf('status') === -1) {
+    columnNames.forEach(function (field) {
+      switch (field?.toLowerCase())
+      {
+        case "capability":
+        case "name":
+          nameValid = true
+          break
+        case "maturity level":
+        case "ring":
+          ringValid = true
+          break
+        case "quadrant":
+          quadrantValid = true
+          break
+        case "description":
+        case "description\nfill this later...":
+          descriptionValid = true
+          break
+        case "isNew":
+          isNewValid = true
+          break
+        case "status":
+        case "grow, hold, or wither":
+          statusValid = true
+    }})
+
+    if (!nameValid || !ringValid || !quadrantValid || !descriptionValid)
+    {
+      throw new MalformedDataError(ExceptionMessages.MISSING_HEADERS)
+    }
+
+    if (!isNewValid && !statusValid)
+    {
       throw new MalformedDataError(ExceptionMessages.MISSING_HEADERS)
     }
   }

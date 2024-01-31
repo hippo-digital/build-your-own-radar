@@ -11,6 +11,7 @@ function renderSearch(radarHeader, quadrants) {
     .classed('search-container__input', true)
     .attr('placeholder', 'Search this radar')
     .attr('id', 'auto-complete')
+    .attr('aria-label','Search-bar')
 
   AutoComplete('#auto-complete', quadrants, function (e, ui) {
     const blipId = ui.item.blip.id()

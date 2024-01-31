@@ -8,7 +8,7 @@ function addListItem(quadrantList, name, callback) {
     .append('li')
     .attr('id', `subnav-item-${getRingIdString(name)}`)
     .classed('quadrant-subnav__list-item', true)
-    .attr('title', name)
+    .attr('title', name+1)//title of attribute
     .append('button')
     .classed('quadrant-subnav__list-item__button', true)
     .attr('role', 'tab')

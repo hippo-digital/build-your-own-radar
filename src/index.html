@@ -39,15 +39,9 @@
     </header>
     </div>
     <main>
-      <div id="pdf-cover-page">
-        <h1 class="pdf-title"></h1>
-        
-      </div>
       <div class="helper-description home-page">
         <!-- when the paragraph is removed the site breaks and cannot generate the radar-->
-        <p>
-          
-        </p>
+        <p></p>
         <span class="loader-text">
           <span class="loader-text__title">Building your radar...</span>
           <p>Your Technology Radar will be available in just a few seconds</p>
@@ -68,6 +62,7 @@
         <form id="byor-form-submit" method="get">
           <input
             type="text"
+            aria-label="search-bar"
             name="documentId"
             id="document-input"
             placeholder="e.g. https://docs.google.com/spreadsheets/d/<sheetid> or hosted CSV/JSON file"
@@ -76,6 +71,7 @@
           <input type="submit" value="Build radar" />
         </form>
       </div>
+      <h1 id="hippo-page-title" class="hippo-title" > Hippo Capability Radar </h1>
       <div class="graph-header"></div>
       <div id="radar">
         <p class="no-blip-text">

@@ -35,6 +35,7 @@ const plugins = [
     'process.env.RINGS': JSON.stringify(process.env.RINGS),
     'process.env.QUADRANTS': JSON.stringify(process.env.QUADRANTS),
     'process.env.ADOBE_LAUNCH_SCRIPT_URL': JSON.stringify(process.env.ADOBE_LAUNCH_SCRIPT_URL),
+    'process.env.DEFAULT_SHEET_URL': JSON.stringify(process.env.DEFAULT_SHEET_URL),
   }),
 ]
 

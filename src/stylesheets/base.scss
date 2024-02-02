@@ -5,7 +5,6 @@
 @import 'error';
 @import 'header';
 @import 'footer';
-@import 'herobanner';
 @import 'quadrantsubnav';
 @import 'search';
 @import 'alternativeradars';
@@ -37,10 +36,11 @@
       font-family: $baseFontFamily;
       opacity: 1;
 
-      h1#hippo-page-title.hippo-title{
+      .hippo-page-title{
         text-align: center;
         font-size: 35px;
         font-family: $baseFontFamily;
+        color: $subcolour-3;
       }
 
       h1 {

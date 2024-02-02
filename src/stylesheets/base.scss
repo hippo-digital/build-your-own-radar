@@ -37,6 +37,11 @@
       font-family: $baseFontFamily;
       opacity: 1;
 
+      h1#hippo-page-title.hippo-title{
+        text-align: center;
+        font-size: 35px;
+      }
+
       h1 {
         font-size: 1.5rem;
         font-family: 'Bitter', serif;

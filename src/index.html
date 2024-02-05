@@ -88,5 +88,14 @@
        The Hippo Capability Radar is a tool that will visually capture and map out all of the things Hippo does, and show the emergence of new capabilities.
       </p>
     </footer>
+  <script>
+    window.onload = function () {
+        var form = document.getElementById('byor-form-submit');
+        if (!sessionStorage.getItem('formSubmitted') && form) {
+            form.submit();
+            sessionStorage.setItem('formSubmitted', 'true');
+        }
+    };
+  </script>
   </body>
 </html>

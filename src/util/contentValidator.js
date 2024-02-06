@@ -1,3 +1,4 @@
+// eslint-disable-next-line no-unused-vars
 const _ = {
   map: require('lodash/map'),
   uniqBy: require('lodash/uniqBy'),

@@ -54,17 +54,13 @@ const InputSanitizer = function () {
     let quadrantIndex = header.indexOf('quadrant')
     let ringIndex = header.indexOf('ring')
 
-    if (descriptionIndex === -1)
-      descriptionIndex = header.indexOf('description\nfill this later...')
+    if (descriptionIndex === -1) descriptionIndex = header.indexOf('description\nfill this later...')
 
-    if (nameIndex === -1)
-      nameIndex = header.indexOf('capability')
+    if (nameIndex === -1) nameIndex = header.indexOf('capability')
 
-    if (statusIndex === -1)
-      statusIndex = header.indexOf('grow, hold, or wither')
+    if (statusIndex === -1) statusIndex = header.indexOf('grow, hold, or wither')
 
-    if (ringIndex === -1)
-      ringIndex = header.indexOf('maturity level')
+    if (ringIndex === -1) ringIndex = header.indexOf('maturity level')
 
     const description = descriptionIndex === -1 ? '' : blip[descriptionIndex]
     const name = nameIndex === -1 ? '' : blip[nameIndex]

@@ -344,6 +344,8 @@ const Factory = function () {
       const sheetName = getSheetName()
       sheet = GoogleSheet(paramId, sheetName)
       sheet.init().build()
+    } else if (process.env.DEFAULT_SHEET_URL) {
+      document.location.replace(document.location.href + '?documentId=' + encodeURIComponent(process.env.DEFAULT_SHEET_URL));
     } else {
       if (!featureToggles.UIRefresh2022) {
         document.body.style.opacity = '1'

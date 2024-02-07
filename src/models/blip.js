@@ -29,23 +29,43 @@ const Blip = function (name, ring, isNew, status, topic, description) {
   }
 
   self.isNew = function () {
-    if (status) {
-      return status.toLowerCase() === 'new'
+    switch (self.status()) {
+      case "new":
+      case "":
+        return true
+      default:
+        return false
     }
-
-    return isNew
   }
 
   self.hasMovedIn = function () {
-    return status.toLowerCase() === 'moved in'
+    switch (self.status()) {
+      case "moved in":
+      case "grow":
+        return true
+      default:
+        return false
+    }
   }
 
   self.hasMovedOut = function () {
-    return status.toLowerCase() === 'moved out'
+    switch (self.status()) {
+      case "moved out":
+      case "wither":
+        return true
+      default:
+        return false
+    }
   }
 
   self.hasNoChange = function () {
-    return status.toLowerCase() === 'no change'
+    switch (self.status()) {
+      case "no change":
+      case "hold":
+        return true
+      default:
+        return false
+    }
   }
 
   self.status = function () {

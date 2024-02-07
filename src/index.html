@@ -4,9 +4,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/images/favicon.ico" rel="icon" />
-    <link rel="preconnect" href="https://rsms.me/" />
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" integrity="sha512-byor" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://rsms.me/" crossorigin />
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <title>Hippo Capability Radar</title>
   </head>
@@ -37,12 +37,11 @@
        </a>
       </div>
     </header>
-    </div>
     <main>
       <div class="helper-description home-page">
         <!-- when the paragraph is removed the site breaks and cannot generate the radar-->
         <p></p>
-        <span class="loader-text">
+        <div class="loader-text">
           <span class="loader-text__title">Building your radar...</span>
           <p>Your Technology Radar will be available in just a few seconds</p>
           <div class="loader-wrapper">
@@ -51,7 +50,7 @@
             <div style="animation-delay: 0.75s"></div>
             <div style="animation-delay: 0.5s"></div>
           </div>
-        </span>
+        </div>
       </div>
       <div id="error-container" class="error-container home-page"></div>
       <div class="input-sheet-form home-page">

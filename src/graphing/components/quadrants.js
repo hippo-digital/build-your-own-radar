@@ -298,7 +298,6 @@ function renderRadarQuadrantName(quadrant, parentGroup, tip) {
     .attr('fill', '#e16a7c')
   quadrantName.text(quadrantNameToDisplay).attr('font-weight', 'bold')
 
-  wrapQuadrantNameInMultiLine(quadrantName, adjustY < 0, quadrantNameGroup, tip)
   const quadrantTextElement = document.querySelector(`.quadrant-group-${quadrant.order} .quadrant-name-group text`)
   const renderedText = quadrantTextElement.getBoundingClientRect()
   ctaArrowXOffset = renderedText.width + 10

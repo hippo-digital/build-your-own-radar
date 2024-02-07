@@ -41,14 +41,26 @@ const InputSanitizer = function () {
   }
 
   self.sanitizeForProtectedSheet = function (rawBlip, header) {
+    header = header.map(function (h) {
+      return h?.trim()?.toLowerCase()
+    })
+
     var blip = trimWhiteSpaces(rawBlip)
 
-    const descriptionIndex = header.indexOf('description')
-    const nameIndex = header.indexOf('name')
-    const isNewIndex = header.indexOf('isNew')
-    const statusIndex = header.indexOf('status')
-    const quadrantIndex = header.indexOf('quadrant')
-    const ringIndex = header.indexOf('ring')
+    let descriptionIndex = header.indexOf('description')
+    let nameIndex = header.indexOf('name')
+    let isNewIndex = header.indexOf('isNew')
+    let statusIndex = header.indexOf('status')
+    let quadrantIndex = header.indexOf('quadrant')
+    let ringIndex = header.indexOf('ring')
+
+    if (descriptionIndex === -1) descriptionIndex = header.indexOf('description\nfill this later...')
+
+    if (nameIndex === -1) nameIndex = header.indexOf('capability')
+
+    if (statusIndex === -1) statusIndex = header.indexOf('grow, hold, or wither')
+
+    if (ringIndex === -1) ringIndex = header.indexOf('maturity level')
 
     const description = descriptionIndex === -1 ? '' : blip[descriptionIndex]
     const name = nameIndex === -1 ? '' : blip[nameIndex]

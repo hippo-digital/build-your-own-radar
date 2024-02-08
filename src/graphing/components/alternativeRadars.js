@@ -11,9 +11,10 @@ function renderAlternativeRadars(radarFooter, alternatives, currentSheet) {
       .append('ul')
       .classed(`alternative-radars__list`, true)
       .classed(`alternative-radars__list__row-${i}`, true)
+      .attr('role', 'tablist')
 
     list.forEach(function (alternative) {
-      const alternativeListItem = alternativesList.append('li').classed('alternative-radars__list-item', true)
+      const alternativeListItem = alternativesList.append('li').classed('alternative-radars__list-item', true).attr('role', 'presentation')
 
       alternativeListItem
         .append('a')

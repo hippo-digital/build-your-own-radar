@@ -75,17 +75,6 @@ header {
   padding: 15px 0 25px;
 }
 
-.home-link {
-  color: $pink;
-  margin-bottom: 10px;
-  line-height: normal;
-  cursor: pointer;
-  display: inline-block;
-  font-size: $baseFont;
-  text-align: left;
-  width: 80%;
-}
-
 .button {
   font-size: $baseFont;
   text-transform: capitalize;
@@ -100,54 +89,6 @@ header {
 
   &.no-capitalize {
     text-transform: none;
-  }
-
-  &:hover,
-  &.selected {
-    transform: translate(0, -2px);
-    opacity: 0.85;
-
-    &.first {
-      color: white;
-      background-color: $green;
-    }
-
-    &.second {
-      color: white;
-      background-color: $blue;
-    }
-
-    &.third {
-      color: white;
-      background-color: $orange;
-    }
-
-    &.fourth {
-      color: white;
-      background-color: $violet;
-    }
-  }
-
-  &.full-view {
-    &.first {
-      background-color: $green;
-      color: $white;
-    }
-
-    &.second {
-      background-color: $blue;
-      color: $white;
-    }
-
-    &.third {
-      background-color: $orange;
-      color: $white;
-    }
-
-    &.fourth {
-      background-color: $violet;
-      color: $white;
-    }
   }
 }
 

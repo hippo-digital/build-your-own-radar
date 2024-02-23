@@ -87,9 +87,11 @@ const GoogleAuth = function () {
     self.forceLogin = forceLogin
     window.google.accounts.id.initialize({
       client_id: CLIENT_ID,
+      ux_mode: 'redirect',
       callback: self.gsiCallback,
       auto_select: self.forceLogin ? false : true,
       cancel_on_tap_outside: false,
+      use_fedcm_for_prompt: true,
     })
     if (!self.forceLogin) {
       window.google.accounts.id.prompt((notification) => {

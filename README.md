@@ -8,6 +8,13 @@
 
 A library that generates an interactive radar, inspired by [thoughtworks.com/radar](http://thoughtworks.com/radar).
 
+## Usage by Hippo
+This fork changes some display options to be Hippo branded, and also makes it easier to switch between multiple radars within a single Google Sheet. Run a dev environment using:
+
+    QUADRANTS='["Strategy", "CX/UX", "Engineering", "Data"]' RINGS='["Leader", "Independent", "Mature", "Lead", "Nascent", "Contribute", "Adopt", "Develop"]' npm run dev
+
+Unlike in the original, the quadrants and rings values are generated from the data in the source sheet. The environment variables hint at ordering only.
+
 ## Demo
 
 You can see this in action at https://radar.thoughtworks.com. If you plug in [this data](https://docs.google.com/spreadsheets/d/1GBX3-jzlGkiKpYHF9RvVtu6GxSrco5OYTBv9YsOTXVg/edit#gid=0) you'll see [this visualization](https://radar.thoughtworks.com/?sheetId=https%3A%2F%2Fdocs.google.com%2Fspreadsheets%2Fd%2F1GBX3-jzlGkiKpYHF9RvVtu6GxSrco5OYTBv9YsOTXVg%2Fedit%23gid%3D0).

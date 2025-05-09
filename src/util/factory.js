@@ -103,16 +103,31 @@ const plotRadarGraph = function (title, blips, currentRadarName, alternativeRada
 
   d3.selectAll('.loading').remove()
 
-  const ringMap = graphConfig.rings.reduce((allRings, ring, index) => {
-    allRings[ring] = new Ring(ring, index)
+  const tempringMap = blips.reduce((allRings, blip) => {
+    if (blip[2] === undefined || blip[2].length <= 1) {
+      return allRings
+    }
+    let idx = graphConfig.rings.indexOf(blip[2])
+    if (idx == -1)
+      idx = 3
+    allRings[blip[2]] = new Ring(blip[2], idx)
     return allRings
   }, {})
 
-  const quadrants = graphConfig.quadrants.reduce((allQuadrants, quadrant) => {
-    allQuadrants[quadrant] = new Quadrant(quadrant)
-    return allQuadrants
-  }, {})
+  const ringMap = {}
+  _.orderBy(tempringMap, [(ring) => ring.order()]).
+    map(
+      (ring, idx) => ringMap[ring.name()] = new Ring(ring.name(), idx)
+  )
+ 
 
+  const quadrants = blips.reduce((allQuads, blip) => {
+    if (blip[1] === undefined || blip[1].length <= 1) {
+      return allQuads
+    }
+    allQuads[blip[1]] = new Quadrant(blip[1])
+    return allQuads
+  }, {})
   // Sort blips by quadrant, ring, and name
   blips = sortBlipsAlphabetically(blips)
 
